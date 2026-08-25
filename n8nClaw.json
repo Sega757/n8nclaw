@@ -604,8 +604,10 @@
     {
       "parameters": {
         "operation": "executeQuery",
-        "query": "SELECT session_id, message, id\nFROM n8n_chat_histories \nWHERE id > '{{ $json.last_vector_id }}'\nORDER BY id ASC\n",
-        "options": {}
+        "query": "SELECT session_id, message, id\nFROM n8n_chat_histories \nWHERE id > $1\nORDER BY id ASC\n",
+        "options": {
+          "queryParameters": "{{ $json.last_vector_id }}"
+        }
       },
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.6,
