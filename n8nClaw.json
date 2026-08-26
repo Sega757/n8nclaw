@@ -604,7 +604,7 @@
     {
       "parameters": {
         "operation": "executeQuery",
-        "query": "SELECT session_id, message, id\nFROM n8n_chat_histories \nWHERE id > $1\nORDER BY id ASC\n",
+        "query": "SELECT session_id, message, id\nFROM n8n_chat_histories \nWHERE id > $1::int\nORDER BY id ASC\n",
         "options": {
           "queryParameters": "{{ $json.last_vector_id }}"
         }
