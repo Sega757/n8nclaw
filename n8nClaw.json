@@ -262,7 +262,11 @@
           "cachedResultName": "ClawdBot Tasks",
           "cachedResultUrl": "/projects/YOUR_PROJECT_ID/datatables/YOUR_TASKS_TABLE_ID"
         },
-        "returnAll": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Return_All', ``, 'boolean') }}"
+        "returnAll": false,
+        "limit": 50,
+        "options": {
+          "fields": "task_name, task_details, task_complete, Is_recurring"
+        }
       },
       "type": "n8n-nodes-base.dataTableTool",
       "typeVersion": 1,
@@ -293,7 +297,11 @@
             }
           ]
         },
-        "returnAll": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Return_All', ``, 'boolean') }}"
+        "returnAll": false,
+        "limit": 50,
+        "options": {
+          "fields": "subtask_name, subtask_details, subtask_complete, parent_task_id"
+        }
       },
       "type": "n8n-nodes-base.dataTableTool",
       "typeVersion": 1,
@@ -604,7 +612,7 @@
     {
       "parameters": {
         "operation": "executeQuery",
-        "query": "SELECT session_id, message, id\nFROM n8n_chat_histories \nWHERE id > $1\nORDER BY id ASC\n",
+        "query": "SELECT session_id, message, id\nFROM n8n_chat_histories \nWHERE id > $1\nORDER BY id ASC\nLIMIT 50\n",
         "options": {
           "queryParameters": "{{ $json.last_vector_id }}"
         }
@@ -1883,13 +1891,16 @@
     {
       "parameters": {
         "operation": "getAll",
-        "returnAll": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Return_All', ``, 'boolean') }}",
+        "returnAll": false,
         "simple": false,
         "filters": {
           "q": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Search', ``, 'string') }}",
           "sender": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Sender', ``, 'string') }}"
         },
-        "options": {}
+        "options": {
+          "fields": "id, threadId, snippet, payload.headers"
+        },
+        "limit": 50
       },
       "type": "n8n-nodes-base.gmailTool",
       "typeVersion": 2.2,

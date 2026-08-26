@@ -1,0 +1,3 @@
+## 2024-05-18 - Bounding LLM Tool Fetches in n8n Workflows
+**Learning:** An unbounded data query (such as from a database or Gmail API) in an LLM agent workflow will pull large arrays of unneeded information into memory. This leads to context window overflows, memory bloat, and latency spikes when processing messages or fetching history in n8n. In `n8nClaw.json`, several nodes lacked defensive limiters even when `returnAll` was false/dynamic.
+**Action:** Always add explicit `limit` properties (e.g. `limit: 50`) to node configurations (like `gmailTool` and `dataTableTool`) and append `LIMIT` clauses to SQL queries (like chat history loads) inside n8n workflows that serve an LLM agent, mitigating massive unbounded payloads.
