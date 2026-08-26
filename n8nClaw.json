@@ -87,7 +87,7 @@
             {
               "id": "b1b370a8-b981-43ab-b1b0-88853bad298b",
               "leftValue": "={{ $json.message.chat.id }}",
-              "rightValue": "={{ $if($('Telegram Trigger').isExecuted, $('Telegram Trigger').item.json.message.chat.id, YOUR_TELEGRAM_CHAT_ID) }}",
+              "rightValue": "=YOUR_TELEGRAM_CHAT_ID",
               "operator": {
                 "type": "number",
                 "operation": "equals"
