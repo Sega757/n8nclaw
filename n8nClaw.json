@@ -863,6 +863,7 @@
     },
     {
       "parameters": {
+        "authentication": "headerAuth",
         "httpMethod": "POST",
         "path": "YOUR_WEBHOOK_PATH",
         "options": {}
@@ -875,7 +876,13 @@
       ],
       "id": "7ced4773-cf4b-4227-993b-08d5c5c7e246",
       "name": "Webhook",
-      "webhookId": "YOUR_WEBHOOK_PATH"
+      "webhookId": "YOUR_WEBHOOK_PATH",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "YOUR_HTTP_HEADER_AUTH_ID",
+          "name": "Header Auth account"
+        }
+      }
     },
     {
       "parameters": {

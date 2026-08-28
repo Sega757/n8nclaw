@@ -163,6 +163,7 @@ Search the workflow JSON for `YOUR_` and replace with your actual values:
 | `YOUR_PHONE` | Your phone number (for WhatsApp filtering) |
 | `YOUR_EVOLUTION_INSTANCE` | Your Evolution API instance name |
 | `YOUR_WEBHOOK_PATH` | Auto-generated on import (or set your own) |
+| `YOUR_HTTP_HEADER_AUTH_ID` | Auto-populated when you configure webhook Header Auth |
 | `YOUR_*_TABLE_ID` | The IDs of the data tables you created in step 2 |
 | `YOUR_*_CREDENTIAL_ID` | Auto-populated when you connect credentials in n8n |
 | `YOUR_PROJECT_ID` | Your n8n project ID |

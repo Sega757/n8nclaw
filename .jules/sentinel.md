@@ -2,3 +2,7 @@
 **Vulnerability:** A filter node designed for authentication was using `$if` to compare the incoming `chat.id` with the same `chat.id` retrieved dynamically via `$('Telegram Trigger').item.json.message.chat.id`. This effectively resulted in `if (incoming.chat.id == incoming.chat.id)`, making the condition always true.
 **Learning:** In visual no-code workflows, it is easy to accidentally link an authorization verification check back to the untrusted input itself, instead of comparing it to a known static secret or environment variable.
 **Prevention:** Hardcode or strictly reference environment variables for secrets/IDs (`=YOUR_TELEGRAM_CHAT_ID`) instead of writing complex dynamic fallbacks in filter conditions.
+## 2024-10-24 - Missing Webhook Authentication
+**Vulnerability:** The n8n Webhook node (used for incoming messages, such as WhatsApp via Evolution API) was completely unauthenticated and accepted any POST request to its URL. This allows anyone with the URL to spoof messages or cause a Denial of Service (DoS) by spamming the endpoint.
+**Learning:** In n8n, webhooks do not enforce authentication by default. Without authentication, attackers can easily bypass internal filter nodes by crafting malicious payloads that match the expected structure.
+**Prevention:** Always enforce authentication (e.g., `headerAuth`) directly on the Webhook trigger node to ensure requests are from a trusted source, before any data enters the workflow.
