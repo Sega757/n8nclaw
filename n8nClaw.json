@@ -2315,6 +2315,40 @@
           "name": "n8nClaw"
         }
       }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "gmail-auth-check",
+              "leftValue": "={{ $json.headers.from }}",
+              "rightValue": "={{ $env.AUTHORIZED_EMAIL }}",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.3,
+      "position": [
+        -2144,
+        -752
+      ],
+      "id": "gmail-auth-filter-node",
+      "name": "Filter2"
     }
   ],
   "pinData": {},
@@ -2693,7 +2727,7 @@
       "main": [
         [
           {
-            "node": "Get row(s)4",
+            "node": "Filter2",
             "type": "main",
             "index": 0
           }
@@ -3193,6 +3227,17 @@
           {
             "node": "Email Manager",
             "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter2": {
+      "main": [
+        [
+          {
+            "node": "Get row(s)4",
+            "type": "main",
             "index": 0
           }
         ]
