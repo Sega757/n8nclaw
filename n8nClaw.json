@@ -88,7 +88,7 @@
             {
               "id": "b1b370a8-b981-43ab-b1b0-88853bad298b",
               "leftValue": "={{ $json.message.chat.id }}",
-              "rightValue": "=YOUR_TELEGRAM_CHAT_ID",
+              "rightValue": "={{ $env.AUTHORIZED_TELEGRAM_CHAT_ID }}",
               "operator": {
                 "type": "number",
                 "operation": "equals"
@@ -212,7 +212,7 @@
     },
     {
       "parameters": {
-        "chatId": "={{ $if($('Telegram Trigger').isExecuted, $('Telegram Trigger').item.json.message.chat.id, YOUR_TELEGRAM_CHAT_ID) }}",
+        "chatId": "={{ $if($('Telegram Trigger').isExecuted, $('Telegram Trigger').item.json.message.chat.id, $env.AUTHORIZED_TELEGRAM_CHAT_ID) }}",
         "text": "={{ $('n8nClaw').item.json.output }}",
         "additionalFields": {
           "parse_mode": "Markdown"
@@ -928,7 +928,7 @@
             {
               "id": "b1b370a8-b981-43ab-b1b0-88853bad298b",
               "leftValue": "={{ $json.body.data.key.remoteJid }}",
-              "rightValue": "=YOUR_PHONE@s.whatsapp.net",
+              "rightValue": "={{ $env.AUTHORIZED_WHATSAPP }}",
               "operator": {
                 "type": "string",
                 "operation": "equals"
@@ -998,7 +998,7 @@
       "parameters": {
         "resource": "messages-api",
         "instanceName": "YOUR_EVOLUTION_INSTANCE",
-        "remoteJid": "={{ $if($('Filter1').isExecuted, $('Filter1').item.json.body.data.key.remoteJid, 'YOUR_PHONE@s.whatsapp.net') }}",
+        "remoteJid": "={{ $if($('Filter1').isExecuted, $('Filter1').item.json.body.data.key.remoteJid, $env.AUTHORIZED_WHATSAPP) }}",
         "messageText": "={{ $('n8nClaw').item.json.output }}",
         "options_message": {}
       },
