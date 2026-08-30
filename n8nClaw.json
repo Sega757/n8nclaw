@@ -215,7 +215,8 @@
         "chatId": "={{ $if($('Telegram Trigger').isExecuted, $('Telegram Trigger').item.json.message.chat.id, $env.AUTHORIZED_TELEGRAM_CHAT_ID) }}",
         "text": "={{ $('n8nClaw').item.json.output }}",
         "additionalFields": {
-          "parse_mode": "Markdown"
+          "parse_mode": "Markdown",
+          "reply_to_message_id": "={{ $('Telegram Trigger').item.json.message.message_id }}"
         }
       },
       "type": "n8n-nodes-base.telegram",
