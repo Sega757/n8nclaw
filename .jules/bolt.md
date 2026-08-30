@@ -1,3 +1,7 @@
 ## 2026-08-27 - Prevent PostgreSQL type coercion sequential scans in n8n
 **Learning:** In n8n workflows, when writing parameterized SQL queries for n8n PostgreSQL nodes, explicitly cast parameters representing IDs or integers (e.g., `$1::int` or `$1::bigint`) directly in the SQL statement. Without explicit casting, PostgreSQL may fall back to slow sequential scans instead of using indexes due to type mismatch (e.g., comparing text parameter to integer/bigint column).
 **Action:** Replaced `$1` with `$1::bigint` in the `n8n-nodes-base.postgres` "Execute a SQL query" node.
+
+## 2026-08-27 - PostgreSQL large payloads limit for Data Loaders
+**Learning:** Omitting `LIMIT` in a scheduled batch processing workflow's PostgreSQL query causes massive payloads, but appending it naturally leverages the existing cursor (e.g., `last_vector_id`) to create a robust pagination loop. This implements pagination for the data loader, fetching records in batches instead of pulling the entire dataset into memory. This reduces memory usage and prevents LLM token limit exhaustion when processing large numbers of historic chat messages.
+**Action:** Appended `LIMIT 50` to the SQL query in the Postgres node `3c618b36-eaa2-42ff-b28d-befc276f0038`.
