@@ -10,3 +10,7 @@
 ## 2024-12-01 - Native message threading for better conversational context
 **Learning:** In asynchronous headless conversational AI (like Telegram bots), users can lose context if the AI takes time to respond or if the user sends multiple messages. Using native platform features like direct message replies (`reply_to_message_id`) creates a visual thread, significantly improving the interaction model and contextual clarity.
 **Action:** Always use native message threading/reply features for outbound messages when responding to a specific user input in messaging workflows.
+
+## 2024-12-01 - Native message threading for WhatsApp conversational context
+**Learning:** In asynchronous headless conversational AI (like WhatsApp bots), users can lose context if the AI takes time to respond or if the user sends multiple messages. Using native platform features like direct message replies (`quoted.messageQuoted.messageId` in Evolution API) creates a visual thread, significantly improving the interaction model and contextual clarity.
+**Action:** Always use native message threading/reply features for outbound messages when responding to a specific user input in WhatsApp messaging workflows.
