@@ -1001,7 +1001,13 @@
         "instanceName": "YOUR_EVOLUTION_INSTANCE",
         "remoteJid": "={{ $if($('Filter1').isExecuted, $('Filter1').item.json.body.data.key.remoteJid, $env.AUTHORIZED_WHATSAPP) }}",
         "messageText": "={{ $('n8nClaw').item.json.output }}",
-        "options_message": {}
+        "options_message": {
+          "quoted": {
+            "messageQuoted": {
+              "messageId": "={{ $('Filter1').item.json.body.data.key.id }}"
+            }
+          }
+        }
       },
       "type": "n8n-nodes-evolution-api.evolutionApi",
       "typeVersion": 1,
