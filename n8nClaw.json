@@ -2329,11 +2329,11 @@
           "conditions": [
             {
               "id": "gmail-auth-check",
-              "leftValue": "={{ $json.headers.from }}",
+              "leftValue": "={{ $json.headers.from.split('<').pop().replace('>', '').trim() }}",
               "rightValue": "={{ $env.AUTHORIZED_EMAIL }}",
               "operator": {
                 "type": "string",
-                "operation": "contains"
+                "operation": "equals"
               }
             }
           ],
