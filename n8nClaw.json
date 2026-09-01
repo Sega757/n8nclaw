@@ -2335,8 +2335,8 @@
           "conditions": [
             {
               "id": "gmail-auth-check",
-              "leftValue": "={{ $json.headers.from.split('<').pop().replace('>', '').trim() }}",
-              "rightValue": "={{ $env.AUTHORIZED_EMAIL }}",
+              "leftValue": "={{ ($json.headers.from.match(/<([^>]+)>/)?.[1] || $json.headers.from).trim().toLowerCase() }}",
+              "rightValue": "={{ $env.AUTHORIZED_EMAIL.toLowerCase() }}",
               "operator": {
                 "type": "string",
                 "operation": "equals"
