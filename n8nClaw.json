@@ -1202,7 +1202,9 @@
           ]
         },
         "simple": false,
-        "filters": {},
+        "filters": {
+          "q": "from:={{ $env.AUTHORIZED_EMAIL }}"
+        },
         "options": {}
       },
       "type": "n8n-nodes-base.gmailTrigger",
@@ -1218,7 +1220,9 @@
           "id": "ZwYN0qmskdA5inNo",
           "name": "n8nClaw"
         }
-      }
+      },
+      "notes": "\u26a1 Bolt: Optimized by pre-filtering at the source. This prevents n8n from downloading and processing unauthorized emails only to discard them downstream, saving memory, API calls, and execution time.",
+      "notesInFlow": true
     },
     {
       "parameters": {
