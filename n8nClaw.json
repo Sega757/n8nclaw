@@ -2356,6 +2356,27 @@
       ],
       "id": "gmail-auth-filter-node",
       "name": "Filter2"
+    },
+    {
+      "parameters": {
+        "operation": "sendChatAction",
+        "chatId": "={{ $json.message.chat.id }}",
+        "action": "typing"
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -1978,
+        260
+      ],
+      "id": "35e3e719-71e7-44cf-912a-2bfeee5bf271",
+      "name": "Typing Indicator",
+      "credentials": {
+        "telegramApi": {
+          "id": "xZj9U4VG4vJSiXqc",
+          "name": "Openclaw Clone"
+        }
+      }
     }
   ],
   "pinData": {},
@@ -2398,6 +2419,11 @@
         [
           {
             "node": "Switch1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Typing Indicator",
             "type": "main",
             "index": 0
           }

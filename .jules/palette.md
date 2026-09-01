@@ -14,3 +14,7 @@
 ## 2024-12-01 - Native message threading for WhatsApp conversational context
 **Learning:** In asynchronous headless conversational AI (like WhatsApp bots), users can lose context if the AI takes time to respond or if the user sends multiple messages. Using native platform features like direct message replies (`quoted.messageQuoted.messageId` in Evolution API) creates a visual thread, significantly improving the interaction model and contextual clarity.
 **Action:** Always use native message threading/reply features for outbound messages when responding to a specific user input in WhatsApp messaging workflows.
+
+## 2024-12-05 - Immediate visual feedback for high-latency operations
+**Learning:** For headless conversational AI agents performing complex operations (like LLM interactions and multiple tool calls), the lack of immediate feedback can make the application feel unresponsive. Sending a native "Typing..." action immediately after receiving user input is a crucial micro-UX improvement that manages user expectations and perceived latency.
+**Action:** Always insert a "Typing" or processing indicator node immediately following input triggers before routing to high-latency LLM or processing nodes.
