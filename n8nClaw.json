@@ -81,23 +81,23 @@
           "options": {
             "caseSensitive": true,
             "leftValue": "",
-            "typeValidation": "loose",
+            "typeValidation": "strict",
             "version": 3
           },
           "conditions": [
             {
               "id": "b1b370a8-b981-43ab-b1b0-88853bad298b",
-              "leftValue": "={{ $json.message.chat.id }}",
+              "leftValue": "={{ $json.message.chat.id.toString() }}",
               "rightValue": "={{ $env.AUTHORIZED_TELEGRAM_CHAT_ID }}",
               "operator": {
-                "type": "number",
+                "type": "string",
                 "operation": "equals"
               }
             }
           ],
           "combinator": "and"
         },
-        "looseTypeValidation": true,
+        "looseTypeValidation": false,
         "options": {}
       },
       "type": "n8n-nodes-base.filter",
@@ -922,7 +922,7 @@
           "options": {
             "caseSensitive": true,
             "leftValue": "",
-            "typeValidation": "loose",
+            "typeValidation": "strict",
             "version": 3
           },
           "conditions": [
@@ -948,7 +948,7 @@
           ],
           "combinator": "and"
         },
-        "looseTypeValidation": true,
+        "looseTypeValidation": false,
         "options": {}
       },
       "type": "n8n-nodes-base.filter",
@@ -1221,7 +1221,7 @@
           "name": "n8nClaw"
         }
       },
-      "notes": "\u26a1 Bolt: Optimized by pre-filtering at the source. This prevents n8n from downloading and processing unauthorized emails only to discard them downstream, saving memory, API calls, and execution time.",
+      "notes": "⚡ Bolt: Optimized by pre-filtering at the source. This prevents n8n from downloading and processing unauthorized emails only to discard them downstream, saving memory, API calls, and execution time.",
       "notesInFlow": true
     },
     {
@@ -2333,7 +2333,7 @@
           "options": {
             "caseSensitive": false,
             "leftValue": "",
-            "typeValidation": "loose",
+            "typeValidation": "strict",
             "version": 3
           },
           "conditions": [
@@ -2349,7 +2349,7 @@
           ],
           "combinator": "and"
         },
-        "looseTypeValidation": true,
+        "looseTypeValidation": false,
         "options": {}
       },
       "type": "n8n-nodes-base.filter",
