@@ -1221,7 +1221,7 @@
           "name": "n8nClaw"
         }
       },
-      "notes": "⚡ Bolt: Optimized by pre-filtering at the source. This prevents n8n from downloading and processing unauthorized emails only to discard them downstream, saving memory, API calls, and execution time.",
+      "notes": "\u26a1 Bolt: Optimized by pre-filtering at the source. This prevents n8n from downloading and processing unauthorized emails only to discard them downstream, saving memory, API calls, and execution time.",
       "notesInFlow": true
     },
     {
@@ -2381,6 +2381,31 @@
           "name": "Openclaw Clone"
         }
       }
+    },
+    {
+      "parameters": {
+        "resource": "chat-api",
+        "operation": "send-presence",
+        "instanceName": "={{ $json.body.instance }}",
+        "remoteJid": "={{ $json.body.data.key.remoteJid }}",
+        "presence": "composing",
+        "delay": 15000
+      },
+      "type": "n8n-nodes-evolution-api.evolutionApi",
+      "typeVersion": 1,
+      "position": [
+        -1978,
+        -284
+      ],
+      "id": "a28e98d0-8c8c-46fa-b7f8-ad337a19cf25",
+      "name": "WhatsApp Typing Indicator",
+      "credentials": {
+        "evolutionApi": {
+          "id": "o6ck5oFhR5jtwIXm",
+          "name": "Evolution account 2"
+        }
+      },
+      "continueOnFail": true
     }
   ],
   "pinData": {},
@@ -2633,6 +2658,11 @@
         [
           {
             "node": "Get row(s)2",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "WhatsApp Typing Indicator",
             "type": "main",
             "index": 0
           }
