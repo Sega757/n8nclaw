@@ -18,3 +18,7 @@
 ## 2024-12-05 - Immediate visual feedback for high-latency operations
 **Learning:** For headless conversational AI agents performing complex operations (like LLM interactions and multiple tool calls), the lack of immediate feedback can make the application feel unresponsive. Sending a native "Typing..." action immediately after receiving user input is a crucial micro-UX improvement that manages user expectations and perceived latency.
 **Action:** Always insert a "Typing" or processing indicator node immediately following input triggers before routing to high-latency LLM or processing nodes.
+
+## 2026-09-04 - [Non-blocking Peripheral UX Enhancements]
+**Learning:** In n8n workflows, auxiliary UX enhancements like "Typing Indicators" should always have `continueOnFail` set to `true`. If they fail (e.g., due to temporary API issues), the core workflow will break, resulting in a terrible user experience where the bot stops responding entirely.
+**Action:** Always check `continueOnFail: true` for non-critical UX nodes like Telegram/WhatsApp presence updates.
