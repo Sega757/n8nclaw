@@ -2380,7 +2380,8 @@
           "id": "xZj9U4VG4vJSiXqc",
           "name": "Openclaw Clone"
         }
-      }
+      },
+      "continueOnFail": true
     },
     {
       "parameters": {
