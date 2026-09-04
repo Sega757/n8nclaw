@@ -26,3 +26,7 @@
 **Vulnerability:** Sender authorization filters (Telegram, WhatsApp, Gmail) used `loose` type validation in n8n's filter conditions (`"typeValidation": "loose"` and `"looseTypeValidation": true`). This allows type coercion during equality checks, potentially leading to unintended matches (e.g., if an incoming numeric ID is compared to an unset or improperly typed environment variable, or string-to-number coercions that strip leading zeros or characters).
 **Learning:** In n8n, "loose" validation in filters uses `==` instead of `===`. When validating security boundaries (like checking incoming `chat.id` against `$env.AUTHORIZED_TELEGRAM_CHAT_ID`), strict type checking is required to prevent bypasses via type juggling or unexpected coercion behavior.
 **Prevention:** Always set `"typeValidation": "strict"` and `"looseTypeValidation": false` in n8n Filter nodes that are used for authentication or authorization checks.
+## 2024-05-31 - [Webhook Security Headers]
+**Vulnerability:** Publicly exposed n8n webhook lacked explicit security headers.
+**Learning:** By default, n8n webhook nodes do not include critical web security headers like X-Content-Type-Options, X-Frame-Options, or Strict-Transport-Security, making endpoints potentially vulnerable to certain web-based attacks if returning content.
+**Prevention:** Always configure `options.responseHeaders` on n8n Webhook nodes to include these security headers.
