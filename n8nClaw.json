@@ -1221,7 +1221,7 @@
           "name": "n8nClaw"
         }
       },
-      "notes": "\u26a1 Bolt: Optimized by pre-filtering at the source. This prevents n8n from downloading and processing unauthorized emails only to discard them downstream, saving memory, API calls, and execution time.",
+      "notes": "⚡ Bolt: Optimized by pre-filtering at the source. This prevents n8n from downloading and processing unauthorized emails only to discard them downstream, saving memory, API calls, and execution time.",
       "notesInFlow": true
     },
     {
@@ -2380,7 +2380,8 @@
           "id": "xZj9U4VG4vJSiXqc",
           "name": "Openclaw Clone"
         }
-      }
+      },
+      "continueOnFail": true
     },
     {
       "parameters": {

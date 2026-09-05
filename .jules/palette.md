@@ -18,3 +18,7 @@
 ## 2024-12-05 - Immediate visual feedback for high-latency operations
 **Learning:** For headless conversational AI agents performing complex operations (like LLM interactions and multiple tool calls), the lack of immediate feedback can make the application feel unresponsive. Sending a native "Typing..." action immediately after receiving user input is a crucial micro-UX improvement that manages user expectations and perceived latency.
 **Action:** Always insert a "Typing" or processing indicator node immediately following input triggers before routing to high-latency LLM or processing nodes.
+
+## 2025-01-20 - Resilient micro-UX for conversational surfaces
+**Learning:** Adding auxiliary micro-UX enhancements (like typing indicators) shouldn't risk breaking the core conversational flow if the underlying platform API fails. By explicitly telling the workflow engine to continue on failure for these non-critical nodes, we achieve resilient micro-UX that degrades gracefully without crashing the main user journey.
+**Action:** Always configure non-critical auxiliary UX nodes (such as 'Typing Indicators' or presence updates) with `"continueOnFail": true` in the workflow structure.
