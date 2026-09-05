@@ -1883,7 +1883,7 @@
       "parameters": {
         "operation": "get",
         "messageId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Message_ID', ``, 'string') }}",
-        "simple": false,
+        "simple": true,
         "options": {}
       },
       "type": "n8n-nodes-base.gmailTool",
@@ -1906,7 +1906,7 @@
       "parameters": {
         "operation": "getAll",
         "returnAll": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Return_All', ``, 'boolean') }}",
-        "simple": false,
+        "simple": true,
         "filters": {
           "q": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Search', ``, 'string') }}",
           "sender": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Sender', ``, 'string') }}"
