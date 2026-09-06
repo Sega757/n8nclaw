@@ -881,6 +881,10 @@
               {
                 "name": "Strict-Transport-Security",
                 "value": "max-age=31536000; includeSubDomains"
+              },
+              {
+                "name": "Content-Security-Policy",
+                "value": "default-src 'none'"
               }
             ]
           }
@@ -1238,7 +1242,7 @@
           "name": "n8nClaw"
         }
       },
-      "notes": "⚡ Bolt: Optimized by pre-filtering at the source. This prevents n8n from downloading and processing unauthorized emails only to discard them downstream, saving memory, API calls, and execution time.",
+      "notes": "\u26a1 Bolt: Optimized by pre-filtering at the source. This prevents n8n from downloading and processing unauthorized emails only to discard them downstream, saving memory, API calls, and execution time.",
       "notesInFlow": true
     },
     {
