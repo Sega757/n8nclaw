@@ -8,3 +8,7 @@
 ## 2026-08-27 - Pre-filtering at source for polling triggers in n8n
 **Learning:** For polling triggers like the Gmail Trigger in n8n, relying exclusively on downstream filters (e.g., a Filter node checking sender email) is inefficient. n8n will fetch all incoming items (costing API calls, bandwidth, and memory) only to discard them downstream. By utilizing native filtering parameters (like the `q` search parameter in Gmail) on the trigger node itself, you prevent unauthorized or irrelevant data from ever entering the workflow, saving resources.
 **Action:** Added `from:={{ $env.AUTHORIZED_EMAIL }}` to the `q` filter parameter on the Gmail Trigger node to block unauthorized emails before they trigger workflow executions.
+
+## 2026-08-27 - Optimize Gmail AI tools for LLM token efficiency
+**Learning:** In n8n workflows, when an AI Agent uses Gmail tools (like `Get a message in Gmail` or `Get many messages in Gmail`) with `"simple": false`, n8n returns raw, unparsed email payloads (including MIME boundaries, large HTML blocks, and SMTP headers) directly to the LLM. This massive payload severely wastes tokens, drastically increases API latency, and can cause context window exhaustion. By setting `"simple": true`, n8n parses the email and only returns a clean JSON structure (subject, text, from, id), which is vastly more performant and token-efficient for LLMs.
+**Action:** Changed `"simple": false` to `"simple": true` in the `n8n-nodes-base.gmailTool` nodes to optimize payloads sent to the LLM.
