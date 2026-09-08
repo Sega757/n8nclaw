@@ -58,7 +58,7 @@
           "conditions": [
             {
               "keyName": "username",
-              "keyValue": "YOUR_USERNAME"
+              "keyValue": "={{ $json.username }}"
             }
           ]
         },
@@ -585,7 +585,7 @@
     {
       "parameters": {
         "sessionIdType": "customKey",
-        "sessionKey": "YOUR_USERNAME",
+        "sessionKey": "={{ $json.username }}",
         "contextWindowLength": 15
       },
       "type": "@n8n/n8n-nodes-langchain.memoryPostgresChat",
@@ -640,7 +640,7 @@
           "conditions": [
             {
               "keyName": "username",
-              "keyValue": "YOUR_USERNAME"
+              "keyValue": "={{ $json.username }}"
             }
           ]
         }
@@ -730,7 +730,7 @@
           "conditions": [
             {
               "keyName": "username",
-              "keyValue": "YOUR_USERNAME"
+              "keyValue": "={{ $json.username }}"
             }
           ]
         },
@@ -920,7 +920,7 @@
           "conditions": [
             {
               "keyName": "username",
-              "keyValue": "YOUR_USERNAME"
+              "keyValue": "={{ $json.username }}"
             }
           ]
         },
@@ -1068,7 +1068,7 @@
     {
       "parameters": {
         "sessionIdType": "customKey",
-        "sessionKey": "YOUR_USERNAME-research",
+        "sessionKey": "={{ $json.username }}-research",
         "contextWindowLength": 10
       },
       "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
@@ -1144,7 +1144,7 @@
           "conditions": [
             {
               "keyName": "username",
-              "keyValue": "YOUR_USERNAME"
+              "keyValue": "={{ $json.username }}"
             }
           ]
         },
@@ -1259,7 +1259,7 @@
           "conditions": [
             {
               "keyName": "username",
-              "keyValue": "YOUR_USERNAME"
+              "keyValue": "={{ $json.username }}"
             }
           ]
         },
@@ -1351,7 +1351,7 @@
     {
       "parameters": {
         "sessionIdType": "customKey",
-        "sessionKey": "YOUR_USERNAME-email",
+        "sessionKey": "={{ $json.username }}-email",
         "contextWindowLength": 10
       },
       "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
@@ -1406,7 +1406,7 @@
     {
       "parameters": {
         "sessionIdType": "customKey",
-        "sessionKey": "YOUR_USERNAME-docs",
+        "sessionKey": "={{ $json.username }}-docs",
         "contextWindowLength": 20
       },
       "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
@@ -2196,7 +2196,7 @@
     {
       "parameters": {
         "sessionIdType": "customKey",
-        "sessionKey": "YOUR_USERNAME-worker1",
+        "sessionKey": "={{ $json.username }}-worker1",
         "contextWindowLength": 20
       },
       "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
@@ -2231,7 +2231,7 @@
     {
       "parameters": {
         "sessionIdType": "customKey",
-        "sessionKey": "YOUR_USERNAME-worker2",
+        "sessionKey": "={{ $json.username }}-worker2",
         "contextWindowLength": 20
       },
       "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
@@ -2266,7 +2266,7 @@
     {
       "parameters": {
         "sessionIdType": "customKey",
-        "sessionKey": "YOUR_USERNAME-worker3",
+        "sessionKey": "={{ $json.username }}-worker3",
         "contextWindowLength": 20
       },
       "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
