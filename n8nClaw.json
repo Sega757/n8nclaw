@@ -492,7 +492,7 @@
           "conditions": [
             {
               "keyName": "username",
-              "keyValue": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('conditions0_Value', ``, 'string') }}"
+              "keyValue": "={{ $json.username }}"
             }
           ]
         },
@@ -503,7 +503,7 @@
             "user": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('user', ``, 'string') }}",
             "heartbeat": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('heartbeat', ``, 'string') }}",
             "last_channel": "={{ $json.last_channel }}",
-            "username": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('username', `the \"username\" provided by the user as the first answer.`, 'string') }}"
+            "username": "={{ $json.username }}"
           },
           "matchingColumns": [],
           "schema": [
@@ -1789,7 +1789,7 @@
           "conditions": [
             {
               "keyName": "username",
-              "keyValue": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('conditions0_Value', ``, 'string') }}"
+              "keyValue": "={{ $json.username }}"
             }
           ]
         },
@@ -1800,7 +1800,7 @@
             "user": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('user', ``, 'string') }}",
             "heartbeat": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('heartbeat', ``, 'string') }}",
             "last_channel": "={{ $json.last_channel }}",
-            "username": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('username', `the \"username\" provided by the user as the first answer.`, 'string') }}"
+            "username": "={{ $json.username }}"
           },
           "matchingColumns": [],
           "schema": [
