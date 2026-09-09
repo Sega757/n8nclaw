@@ -22,3 +22,7 @@
 ## 2025-01-20 - Resilient micro-UX for conversational surfaces
 **Learning:** Adding auxiliary micro-UX enhancements (like typing indicators) shouldn't risk breaking the core conversational flow if the underlying platform API fails. By explicitly telling the workflow engine to continue on failure for these non-critical nodes, we achieve resilient micro-UX that degrades gracefully without crashing the main user journey.
 **Action:** Always configure non-critical auxiliary UX nodes (such as 'Typing Indicators' or presence updates) with `"continueOnFail": true` in the workflow structure.
+
+## 2025-02-14 - Preventing visual clutter with link previews
+**Learning:** When headless agents return multiple links (e.g., from research tools), native messaging apps (like Telegram) automatically generate large link previews. These previews disrupt the conversational flow, push text off-screen, and create significant visual clutter, ruining the micro-UX.
+**Action:** Always disable web page previews (`disable_web_page_preview: true` or equivalent) on outbound AI messages to maintain a clean, scannable conversational interface.
