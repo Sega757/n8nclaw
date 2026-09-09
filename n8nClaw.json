@@ -1223,7 +1223,7 @@
             }
           ]
         },
-        "simple": false,
+        "simple": true,
         "filters": {
           "q": "from:={{ $env.AUTHORIZED_EMAIL }}"
         },
