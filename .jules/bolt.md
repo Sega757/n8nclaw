@@ -12,3 +12,7 @@
 ## 2026-08-27 - Optimize Gmail AI tools for LLM token efficiency
 **Learning:** In n8n workflows, when an AI Agent uses Gmail tools (like `Get a message in Gmail` or `Get many messages in Gmail`) with `"simple": false`, n8n returns raw, unparsed email payloads (including MIME boundaries, large HTML blocks, and SMTP headers) directly to the LLM. This massive payload severely wastes tokens, drastically increases API latency, and can cause context window exhaustion. By setting `"simple": true`, n8n parses the email and only returns a clean JSON structure (subject, text, from, id), which is vastly more performant and token-efficient for LLMs.
 **Action:** Changed `"simple": false` to `"simple": true` in the `n8n-nodes-base.gmailTool` nodes to optimize payloads sent to the LLM.
+
+## 2026-08-27 - Optimize Gmail Trigger for LLM token efficiency
+**Learning:** In n8n workflows, when an AI Agent uses Gmail tools or triggers (like `Gmail Trigger`) with `"simple": false`, n8n returns raw, unparsed email payloads (including MIME boundaries, large HTML blocks, and SMTP headers) directly to the LLM context. This massive payload severely wastes tokens, drastically increases API latency, and can cause context window exhaustion. By setting `"simple": true`, n8n parses the email and only returns a clean JSON structure (subject, text, from, id), which is vastly more performant and token-efficient for downstream operations.
+**Action:** Changed `"simple": false` to `"simple": true` in the `n8n-nodes-base.gmailTrigger` node to optimize payloads sent down the workflow.
