@@ -16,3 +16,7 @@
 ## 2026-08-27 - Optimize Gmail Trigger for LLM token efficiency
 **Learning:** In n8n workflows, when an AI Agent uses Gmail tools or triggers (like `Gmail Trigger`) with `"simple": false`, n8n returns raw, unparsed email payloads (including MIME boundaries, large HTML blocks, and SMTP headers) directly to the LLM context. This massive payload severely wastes tokens, drastically increases API latency, and can cause context window exhaustion. By setting `"simple": true`, n8n parses the email and only returns a clean JSON structure (subject, text, from, id), which is vastly more performant and token-efficient for downstream operations.
 **Action:** Changed `"simple": false` to `"simple": true` in the `n8n-nodes-base.gmailTrigger` node to optimize payloads sent down the workflow.
+
+## 2026-08-27 - Optimize dataTable user lookup limit
+**Learning:** In n8n workflows, when looking up a specific user profile by `username` in a data table, fetching multiple records (e.g., `limit: 50`) is unnecessary and wasteful since a username uniquely identifies a single user. Fetching 50 rows uses more memory and processing time. Setting the limit to 1 ensures the database/data table only retrieves the single required record.
+**Action:** Changed the limit from 50 to 1 and explicitly set `returnAll: false` on `n8n-nodes-base.dataTable` nodes that fetch user profiles based on `username`.

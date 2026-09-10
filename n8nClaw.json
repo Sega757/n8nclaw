@@ -63,7 +63,7 @@
           ]
         },
         "returnAll": false,
-        "limit": 50
+        "limit": 1
       },
       "type": "n8n-nodes-base.dataTable",
       "typeVersion": 1,
@@ -73,7 +73,9 @@
       ],
       "id": "9dff0361-d790-4a8e-b6bc-1919e4837672",
       "name": "Get row(s)",
-      "alwaysOutputData": true
+      "alwaysOutputData": true,
+      "notes": "\u26a1 Bolt: Optimized by limiting to 1 row. Fetching 50 rows for a single user lookup is unnecessary and wasteful.",
+      "notesInFlow": true
     },
     {
       "parameters": {
@@ -644,7 +646,9 @@
               "keyValue": "={{ $json.username }}"
             }
           ]
-        }
+        },
+        "limit": 1,
+        "returnAll": false
       },
       "type": "n8n-nodes-base.dataTable",
       "typeVersion": 1,
@@ -653,7 +657,9 @@
         1328
       ],
       "id": "475f0c17-8c5a-492e-adea-92211855e488",
-      "name": "Get row(s)1"
+      "name": "Get row(s)1",
+      "notes": "\u26a1 Bolt: Optimized by limiting to 1 row. Fetching 50 rows for a single user lookup is unnecessary and wasteful.",
+      "notesInFlow": true
     },
     {
       "parameters": {
@@ -926,7 +932,7 @@
           ]
         },
         "returnAll": false,
-        "limit": 50
+        "limit": 1
       },
       "type": "n8n-nodes-base.dataTable",
       "typeVersion": 1,
@@ -936,7 +942,9 @@
       ],
       "id": "fa33a682-07f9-40e1-bcee-a25671cbafdd",
       "name": "Get row(s)2",
-      "alwaysOutputData": true
+      "alwaysOutputData": true,
+      "notes": "\u26a1 Bolt: Optimized by limiting to 1 row. Fetching 50 rows for a single user lookup is unnecessary and wasteful.",
+      "notesInFlow": true
     },
     {
       "parameters": {
@@ -1150,7 +1158,7 @@
           ]
         },
         "returnAll": false,
-        "limit": 50
+        "limit": 1
       },
       "type": "n8n-nodes-base.dataTable",
       "typeVersion": 1,
@@ -1160,7 +1168,9 @@
       ],
       "id": "6cb9eb37-ee8f-4a47-97ba-102844ce59e1",
       "name": "Get row(s)3",
-      "alwaysOutputData": true
+      "alwaysOutputData": true,
+      "notes": "\u26a1 Bolt: Optimized by limiting to 1 row. Fetching 50 rows for a single user lookup is unnecessary and wasteful.",
+      "notesInFlow": true
     },
     {
       "parameters": {
@@ -1243,7 +1253,7 @@
           "name": "n8nClaw"
         }
       },
-      "notes": "⚡ Bolt: Optimized by pre-filtering at the source. This prevents n8n from downloading and processing unauthorized emails only to discard them downstream, saving memory, API calls, and execution time.",
+      "notes": "\u26a1 Bolt: Optimized by pre-filtering at the source. This prevents n8n from downloading and processing unauthorized emails only to discard them downstream, saving memory, API calls, and execution time.",
       "notesInFlow": true
     },
     {
@@ -1265,7 +1275,7 @@
           ]
         },
         "returnAll": false,
-        "limit": 50
+        "limit": 1
       },
       "type": "n8n-nodes-base.dataTable",
       "typeVersion": 1,
@@ -1275,7 +1285,9 @@
       ],
       "id": "567905dd-e494-4a9a-90c5-608f5b743103",
       "name": "Get row(s)4",
-      "alwaysOutputData": true
+      "alwaysOutputData": true,
+      "notes": "\u26a1 Bolt: Optimized by limiting to 1 row. Fetching 50 rows for a single user lookup is unnecessary and wasteful.",
+      "notesInFlow": true
     },
     {
       "parameters": {
