@@ -63,7 +63,7 @@
           ]
         },
         "returnAll": false,
-        "limit": 50
+        "limit": 1
       },
       "type": "n8n-nodes-base.dataTable",
       "typeVersion": 1,
@@ -644,7 +644,9 @@
               "keyValue": "={{ $json.username }}"
             }
           ]
-        }
+        },
+        "limit": 1,
+        "returnAll": false
       },
       "type": "n8n-nodes-base.dataTable",
       "typeVersion": 1,
@@ -926,7 +928,7 @@
           ]
         },
         "returnAll": false,
-        "limit": 50
+        "limit": 1
       },
       "type": "n8n-nodes-base.dataTable",
       "typeVersion": 1,
@@ -1150,7 +1152,7 @@
           ]
         },
         "returnAll": false,
-        "limit": 50
+        "limit": 1
       },
       "type": "n8n-nodes-base.dataTable",
       "typeVersion": 1,
@@ -1265,7 +1267,7 @@
           ]
         },
         "returnAll": false,
-        "limit": 50
+        "limit": 1
       },
       "type": "n8n-nodes-base.dataTable",
       "typeVersion": 1,
