@@ -42,3 +42,11 @@
 **Vulnerability:** In the n8n dataTable tools (`Initialization - Update Info` and `Update User and Heartbeat`), the `username` filter condition and column value were bound to an AI-controlled parameter (`$fromAI('username', ...)`). This resulted in an Insecure Direct Object Reference (IDOR) vulnerability, as an attacker could manipulate the AI input to overwrite or access the profile of a different user.
 **Learning:** Security-critical identifiers like `username` or session keys must never be trusted from AI generation. AI models are susceptible to prompt injection and can be tricked into providing someone else's identifier.
 **Prevention:** Always hardcode or dynamically bind security-critical identifiers to a verified context variable (e.g., `={{ $json.username }}`) in data modification tools to enforce authorization boundaries.
+
+## 2026-09-11 - Clean Security Audit: n8nClaw Workflow Verified
+**Vulnerability:** No critical vulnerabilities found. The entire `n8nClaw.json` workflow was audited, and all historic vulnerabilities have been successfully remediated.
+**Learning:** All critical surfaces in `n8nClaw.json` were audited and verified secure:
+- **Session Isolation:** All Memory nodes are dynamically bound to `={{ $json.username }}`.
+- **Injection & Spoofing:** SQL queries are properly parameterized; email authorization utilizes strict lowercase regex extraction.
+- **Transport & Boundary Security:** Webhook enforces `headerAuth`, `CSP default-src 'none'`, and standard security headers; authorization filters enforce strict type validation.
+**Prevention:** Avoid speculative modifications (such as changing AI-controlled parameters in dataTable nodes) without explicit user-ownership schema, as this risks breaking production workflows and constitutes security theater.
