@@ -1030,7 +1030,8 @@
             "messageQuoted": {
               "messageId": "={{ $('Filter1').item.json.body.data.key.id }}"
             }
-          }
+          },
+          "linkPreview": false
         }
       },
       "type": "n8n-nodes-evolution-api.evolutionApi",
