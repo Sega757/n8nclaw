@@ -26,3 +26,7 @@
 ## 2025-02-14 - Preventing visual clutter with link previews
 **Learning:** When headless agents return multiple links (e.g., from research tools), native messaging apps (like Telegram) automatically generate large link previews. These previews disrupt the conversational flow, push text off-screen, and create significant visual clutter, ruining the micro-UX.
 **Action:** Always disable web page previews (`disable_web_page_preview: true` or equivalent) on outbound AI messages to maintain a clean, scannable conversational interface.
+
+## 2024-09-13 - Preventing visual clutter with link previews in WhatsApp
+**Learning:** Similar to Telegram, when headless agents return multiple links, WhatsApp native apps generate large link previews. These previews disrupt the conversational flow, push text off-screen, and create visual clutter. The Telegram node was already fixed with `disable_web_page_preview: true`, but the WhatsApp (Evolution API) node needed the equivalent `linkPreview: false`.
+**Action:** Always disable link previews (`linkPreview: false` in Evolution API or equivalent) on outbound AI messages in WhatsApp to maintain a clean, scannable conversational interface.
