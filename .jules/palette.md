@@ -30,3 +30,7 @@
 ## 2024-09-13 - Preventing visual clutter with link previews in WhatsApp
 **Learning:** Similar to Telegram, when headless agents return multiple links, WhatsApp native apps generate large link previews. These previews disrupt the conversational flow, push text off-screen, and create visual clutter. The Telegram node was already fixed with `disable_web_page_preview: true`, but the WhatsApp (Evolution API) node needed the equivalent `linkPreview: false`.
 **Action:** Always disable link previews (`linkPreview: false` in Evolution API or equivalent) on outbound AI messages in WhatsApp to maintain a clean, scannable conversational interface.
+
+## 2025-05-20 - Eliminating AI conversational filler for headless agents
+**Learning:** For text-based interaction models like headless conversational AI on messaging platforms, typical AI "fluff" and conversational filler (like "Certainly!", "I can help with that!", "Here is what I found:") is a bad user experience. It wastes valuable vertical screen real estate, increases reading time, and makes the bot feel less like an efficient utility. Users prefer zero-shot directness.
+**Action:** Enhance conversational formatting rules in system prompts to strictly mandate direct, concise responses and explicitly eliminate conversational filler.
