@@ -50,3 +50,8 @@
 - **Injection & Spoofing:** SQL queries are properly parameterized; email authorization utilizes strict lowercase regex extraction.
 - **Transport & Boundary Security:** Webhook enforces `headerAuth`, `CSP default-src 'none'`, and standard security headers; authorization filters enforce strict type validation.
 **Prevention:** Avoid speculative modifications (such as changing AI-controlled parameters in dataTable nodes) without explicit user-ownership schema, as this risks breaking production workflows and constitutes security theater.
+
+## 2026-09-12 - Webhook Security Headers: Referrer-Policy
+**Vulnerability:** The publicly exposed Webhook node in the n8n workflow had some HTTP security headers configured (like `X-Content-Type-Options`, `X-Frame-Options`, `Strict-Transport-Security`, and `Content-Security-Policy`) but was missing the `Referrer-Policy` header. Without it, browsers could potentially leak sensitive information in the URL of the referring page when navigating away or loading external resources, depending on the default browser policy.
+**Learning:** Adding `Referrer-Policy` is a standard defense-in-depth measure. While the immediate risk might be low for a simple webhook, enforcing a strict policy like `strict-origin-when-cross-origin` ensures that sensitive URL paths or parameters are not leaked to external origins when a request is made from the webhook's origin.
+**Prevention:** Always ensure a comprehensive set of security headers is defined on Webhook nodes, including `Referrer-Policy: strict-origin-when-cross-origin`, to maintain defense-in-depth and protect against information leakage.
