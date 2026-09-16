@@ -892,6 +892,10 @@
               {
                 "name": "Referrer-Policy",
                 "value": "strict-origin-when-cross-origin"
+              },
+              {
+                "name": "Cache-Control",
+                "value": "no-store"
               }
             ]
           }
