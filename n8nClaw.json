@@ -218,6 +218,29 @@
           "parse_mode": "Markdown",
           "reply_to_message_id": "={{ $('Telegram Trigger').item.json.message.message_id }}",
           "disable_web_page_preview": true
+        },
+        "replyMarkup": "inlineKeyboard",
+        "inlineKeyboard": {
+          "rows": [
+            {
+              "row": {
+                "buttons": [
+                  {
+                    "text": "👍 Helpful",
+                    "additionalFields": {
+                      "callback_data": "feedback_helpful"
+                    }
+                  },
+                  {
+                    "text": "👎 Not Helpful",
+                    "additionalFields": {
+                      "callback_data": "feedback_not_helpful"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
         }
       },
       "type": "n8n-nodes-base.telegram",
