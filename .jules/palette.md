@@ -34,3 +34,7 @@
 ## 2025-05-20 - Eliminating AI conversational filler for headless agents
 **Learning:** For text-based interaction models like headless conversational AI on messaging platforms, typical AI "fluff" and conversational filler (like "Certainly!", "I can help with that!", "Here is what I found:") is a bad user experience. It wastes valuable vertical screen real estate, increases reading time, and makes the bot feel less like an efficient utility. Users prefer zero-shot directness.
 **Action:** Enhance conversational formatting rules in system prompts to strictly mandate direct, concise responses and explicitly eliminate conversational filler.
+
+## 2025-06-25 - Interactive inline keyboards for headless agents
+**Learning:** In headless conversational AI workflows (e.g., Telegram bots), relying on unstructured text for simple user feedback creates high friction and poor UX. Adding interactive inline keyboards directly to outbound AI messages provides a quick, native way for users to interact (e.g., rating helpfulness) without needing to type, significantly improving the micro-UX.
+**Action:** Always add interactive inline keyboards (using `replyMarkup: inlineKeyboard` or equivalent) to outbound messages in conversational platforms to reduce user friction for common responses or feedback gathering.
