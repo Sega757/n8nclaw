@@ -38,3 +38,7 @@
 ## 2025-05-20 - Easing user feedback in headless AI agents
 **Learning:** In headless conversational AI (like Telegram or WhatsApp bots), relying on free-text feedback creates friction. Using interactive inline keyboards (like thumbs up/down) directly in the outbound AI messages significantly improves the micro-UX. It makes the interface more intuitive and drastically reduces the user effort required to provide feedback on responses.
 **Action:** Always provide interaction models like inline keyboards for user feedback mechanisms in conversational surfaces, rather than relying on unstructured text.
+
+## 2026-09-19 - Adapting Markdown for WhatsApp's native formatting
+**Learning:** Standard AI models output Markdown (e.g., `**bold**`), which renders correctly on some platforms but breaks on WhatsApp, displaying literal asterisks (`**bold**`). This degrades readability and breaks the intended visual hierarchy on WhatsApp. By dynamically replacing standard Markdown bolding with WhatsApp's native single-asterisk bolding (`*bold*`) on the outbound payload, we significantly improve cross-channel micro-UX.
+**Action:** Always adapt Markdown formatting (like replacing `**` with `*`) in outbound message nodes targeting WhatsApp or platforms with non-standard Markdown implementations.
