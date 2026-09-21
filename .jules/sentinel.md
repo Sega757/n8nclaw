@@ -60,3 +60,8 @@
 **Vulnerability:** The publicly exposed Webhook node lacked a `Cache-Control: no-store` header. Depending on intervening reverse proxies, CDNs, or aggressive client behaviors, the API responses (which could potentially contain sensitive or user-specific data from workflow executions) might be inadvertently cached and served to unauthorized users or leaked to cache stores.
 **Learning:** Adding the `Cache-Control: no-store` header to dynamic or sensitive endpoints ensures that the HTTP responses are explicitly marked as non-cacheable by all intermediate systems and browsers. This is an important piece of defense-in-depth, especially when webhooks handle sensitive workflow data or API responses.
 **Prevention:** Always include `Cache-Control: no-store` within the `options.responseHeaders` property of publicly exposed, sensitive Webhook nodes in n8n workflows to explicitly prevent any form of caching.
+
+## 2024-05-18 - Missing X-XSS-Protection Header on Webhook Node
+**Vulnerability:** The publicly exposed Webhook node in the n8n workflow was missing the `X-XSS-Protection` header. This is part of the defense-in-depth strategy to mitigate Cross-Site Scripting (XSS) attacks in older browsers.
+**Learning:** Adding `X-XSS-Protection: 1; mode=block` forces older browsers to block the response if they detect an XSS attack, rather than attempting to sanitize it. While Content-Security-Policy (CSP) is the primary modern defense against XSS, adding this header provides backward compatibility and defense-in-depth.
+**Prevention:** Always ensure a comprehensive set of security headers is defined on publicly exposed Webhook nodes, including `X-XSS-Protection: 1; mode=block`, to enforce maximum security compatibility across different client environments.
