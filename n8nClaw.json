@@ -919,6 +919,10 @@
               {
                 "name": "Cache-Control",
                 "value": "no-store"
+              },
+              {
+                "name": "X-XSS-Protection",
+                "value": "1; mode=block"
               }
             ]
           }
