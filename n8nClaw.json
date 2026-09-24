@@ -1055,7 +1055,7 @@
         "resource": "messages-api",
         "instanceName": "YOUR_EVOLUTION_INSTANCE",
         "remoteJid": "={{ $if($('Filter1').isExecuted, $('Filter1').item.json.body.data.key.remoteJid, $env.AUTHORIZED_WHATSAPP) }}",
-        "messageText": "={{ $('n8nClaw').item.json.output }}",
+        "messageText": "={{ $('n8nClaw').item.json.output.replace(/\\*\\*/g, '*') }}",
         "options_message": {
           "quoted": {
             "messageQuoted": {
