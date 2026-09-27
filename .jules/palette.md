@@ -41,3 +41,7 @@
 ## 2024-05-18 - Convert standard markdown bold to WhatsApp markdown
 **Learning:** In n8n headless conversational AI workflows targeting WhatsApp, standard AI-generated Markdown bolding (`**bold**`) breaks and displays as literal asterisks.
 **Action:** Dynamically replace standard Markdown with WhatsApp's native single-asterisk bolding in the outbound message payload (e.g., using a JavaScript `.replace` function to convert `**` to `*`).
+
+## 2025-06-15 - Trigger configuration for conversational interactive elements
+**Learning:** When implementing interactive inline keyboards in headless conversational AI for micro-UX feedback, the corresponding trigger node must explicitly listen for 'callback_query' events, otherwise the interactions will fail silently and result in a broken experience.
+**Action:** Always verify that input triggers in conversational surfaces are configured to receive callback data, not just standard text messages, when rolling out interactive UX enhancements.
