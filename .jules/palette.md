@@ -45,3 +45,7 @@
 ## 2025-06-15 - Trigger configuration for conversational interactive elements
 **Learning:** When implementing interactive inline keyboards in headless conversational AI for micro-UX feedback, the corresponding trigger node must explicitly listen for 'callback_query' events, otherwise the interactions will fail silently and result in a broken experience.
 **Action:** Always verify that input triggers in conversational surfaces are configured to receive callback data, not just standard text messages, when rolling out interactive UX enhancements.
+
+## 2025-06-25 - Supporting callback_query UX elements in node data paths
+**Learning:** When using interactive inline keyboards with `callback_data` in n8n Telegram bots, the trigger receives a `callback_query` payload instead of a standard `message` payload. This breaks authorization filters checking `$json.message.chat.id`, downstream nodes extracting text from `$json.message.text`, and helper nodes like Typing Indicators relying on `$json.message.chat.id`. For the UX enhancement to work, all relevant nodes must be updated to conditionally handle both paths (e.g., using `($json.message?.chat?.id || $json.callback_query?.message?.chat?.id)`).
+**Action:** Always map both `message` and `callback_query` data paths across all relevant nodes (filters, text extraction, UX helpers) when implementing interactive inline keyboard elements to ensure the interaction flow is not broken.
