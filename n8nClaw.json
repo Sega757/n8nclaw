@@ -88,7 +88,7 @@
           "conditions": [
             {
               "id": "b1b370a8-b981-43ab-b1b0-88853bad298b",
-              "leftValue": "={{ $json.message.chat.id.toString() }}",
+              "leftValue": "={{ ($json.message?.chat?.id || $json.callback_query?.message?.chat?.id).toString() }}",
               "rightValue": "={{ $env.AUTHORIZED_TELEGRAM_CHAT_ID }}",
               "operator": {
                 "type": "string",
@@ -117,7 +117,7 @@
             {
               "id": "ac8d70f0-59ba-4381-942d-18f7401a4705",
               "name": "user_message",
-              "value": "={{ $if($('Transcribe a recording').isExecuted, $('Transcribe a recording').item.json.content.parts[0].text, $if($('Analyze document').isExecuted, $('Analyze document').item.json.content.parts[0].text, $if($('Analyze an image').isExecuted, $('Analyze an image').item.json.content.parts[0].text, $('Filter').item.json.message.text))) }}",
+              "value": "={{ $if($('Transcribe a recording').isExecuted, $('Transcribe a recording').item.json.content.parts[0].text, $if($('Analyze document').isExecuted, $('Analyze document').item.json.content.parts[0].text, $if($('Analyze an image').isExecuted, $('Analyze an image').item.json.content.parts[0].text, ($('Filter').item.json.message?.text || $('Filter').item.json.callback_query?.data)))) }}",
               "type": "string"
             },
             {
@@ -2425,7 +2425,7 @@
     {
       "parameters": {
         "operation": "sendChatAction",
-        "chatId": "={{ $json.message.chat.id }}",
+        "chatId": "={{ $json.message?.chat?.id || $json.callback_query?.message?.chat?.id }}",
         "action": "typing"
       },
       "type": "n8n-nodes-base.telegram",
