@@ -49,3 +49,7 @@
 ## 2025-06-25 - Handling callback queries in conversational workflows
 **Learning:** When using interactive inline keyboards in n8n Telegram bots, the trigger receives a `callback_query` payload instead of a standard `message` payload. This breaks downstream nodes (authorization filters, typing indicators, text extractors) if they only look for `$json.message`.
 **Action:** Ensure all downstream nodes in Telegram interactive workflows conditionally handle both paths, e.g., `($json.message?.chat?.id || $json.callback_query?.message?.chat?.id)`, to prevent silent failures and dropped interactions.
+
+## 2025-10-24 - Resolving stuck visual loading states for interactive elements
+**Learning:** When users interact with inline keyboard buttons in Telegram bots, the client sends a `callback_query` to the bot and sets the button into a visual loading state. If the bot does not acknowledge this event via an explicit `answerCallbackQuery` API call, the button remains stuck in a loading state, leading to a confusing and broken user experience.
+**Action:** Always implement an `answerCallbackQuery` node (with `"continueOnFail": true`) immediately following input triggers that handle interactive inline keyboard interactions to resolve loading states and provide immediate UI feedback.
