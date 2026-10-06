@@ -2468,6 +2468,28 @@
         }
       },
       "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "operation": "answerCallbackQuery",
+        "queryId": "={{ $json.callback_query?.id }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -1978,
+        420
+      ],
+      "id": "fb549924-f7b7-4f6c-94cf-1e9e3e7f9a1f",
+      "name": "Answer Callback Query",
+      "credentials": {
+        "telegramApi": {
+          "id": "xZj9U4VG4vJSiXqc",
+          "name": "Openclaw Clone"
+        }
+      },
+      "continueOnFail": true
     }
   ],
   "pinData": {},
@@ -2515,6 +2537,11 @@
           },
           {
             "node": "Typing Indicator",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Answer Callback Query",
             "type": "main",
             "index": 0
           }
@@ -3370,6 +3397,11 @@
             "index": 0
           }
         ]
+      ]
+    },
+    "Answer Callback Query": {
+      "main": [
+        []
       ]
     }
   },
