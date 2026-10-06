@@ -20,7 +20,7 @@
       "webhookId": "dbf7e7d0-4f08-49f4-abf8-e68328e00b24",
       "credentials": {
         "telegramApi": {
-          "id": "xZj9U4VG4vJSiXqc",
+          "id": "YOUR_TELEGRAM_API_CREDENTIAL_ID",
           "name": "Openclaw Clone"
         }
       }
@@ -255,7 +255,7 @@
       "webhookId": "cec319a4-390a-4df4-9ef2-4e80b443e077",
       "credentials": {
         "telegramApi": {
-          "id": "xZj9U4VG4vJSiXqc",
+          "id": "YOUR_TELEGRAM_API_CREDENTIAL_ID",
           "name": "Openclaw Clone"
         }
       }
@@ -623,7 +623,7 @@
       "name": "Postgres Chat Memory",
       "credentials": {
         "postgres": {
-          "id": "Sg8EmRUGkrhO8cp0",
+          "id": "YOUR_POSTGRES_CREDENTIAL_ID",
           "name": "Postgres account"
         }
       }
@@ -646,7 +646,7 @@
       "name": "Execute a SQL query",
       "credentials": {
         "postgres": {
-          "id": "Sg8EmRUGkrhO8cp0",
+          "id": "YOUR_POSTGRES_CREDENTIAL_ID",
           "name": "Postgres account"
         }
       }
@@ -704,7 +704,7 @@
       "name": "Supabase Vector Store",
       "credentials": {
         "supabaseApi": {
-          "id": "4x4MiaF82nChbrVh",
+          "id": "YOUR_SUPABASE_API_CREDENTIAL_ID",
           "name": "Supabase account"
         }
       }
@@ -723,7 +723,7 @@
       "name": "Embeddings OpenAI",
       "credentials": {
         "openAiApi": {
-          "id": "ybRg3lag38rmtn5D",
+          "id": "YOUR_OPEN_AI_API_CREDENTIAL_ID",
           "name": "Your OpenAI Account"
         }
       }
@@ -865,7 +865,7 @@
       "name": "Supabase Vector Store1",
       "credentials": {
         "supabaseApi": {
-          "id": "4x4MiaF82nChbrVh",
+          "id": "YOUR_SUPABASE_API_CREDENTIAL_ID",
           "name": "Supabase account"
         }
       }
@@ -884,7 +884,7 @@
       "name": "Embeddings OpenAI1",
       "credentials": {
         "openAiApi": {
-          "id": "ybRg3lag38rmtn5D",
+          "id": "YOUR_OPEN_AI_API_CREDENTIAL_ID",
           "name": "Your OpenAI Account"
         }
       }
@@ -1080,7 +1080,7 @@
       "name": "Enviar texto",
       "credentials": {
         "evolutionApi": {
-          "id": "o6ck5oFhR5jtwIXm",
+          "id": "YOUR_EVOLUTION_API_CREDENTIAL_ID",
           "name": "Evolution account 2"
         }
       }
@@ -1135,7 +1135,7 @@
       "name": "Search in Tavily",
       "credentials": {
         "tavilyApi": {
-          "id": "dXrIckhaqBoLzRpi",
+          "id": "YOUR_TAVILY_API_CREDENTIAL_ID",
           "name": "Tavily account"
         }
       }
@@ -1278,7 +1278,7 @@
       "name": "Gmail Trigger",
       "credentials": {
         "gmailOAuth2": {
-          "id": "ZwYN0qmskdA5inNo",
+          "id": "YOUR_GMAIL_O_AUTH2_CREDENTIAL_ID",
           "name": "n8nClaw"
         }
       },
@@ -1421,7 +1421,7 @@
       "webhookId": "127e5478-a344-4620-9039-cb20f5540e81",
       "credentials": {
         "gmailOAuth2": {
-          "id": "ZwYN0qmskdA5inNo",
+          "id": "YOUR_GMAIL_O_AUTH2_CREDENTIAL_ID",
           "name": "n8nClaw"
         }
       }
@@ -1594,7 +1594,7 @@
       "name": "Analyze document",
       "credentials": {
         "googlePalmApi": {
-          "id": "uxYocLLhfBTVLA0r",
+          "id": "YOUR_GOOGLE_PALM_API_CREDENTIAL_ID",
           "name": "Your Google AI Account"
         }
       }
@@ -1616,7 +1616,7 @@
       "webhookId": "e70c0340-4812-48fc-858c-f5723a3d8b35",
       "credentials": {
         "telegramApi": {
-          "id": "xZj9U4VG4vJSiXqc",
+          "id": "YOUR_TELEGRAM_API_CREDENTIAL_ID",
           "name": "Openclaw Clone"
         }
       }
@@ -1638,7 +1638,7 @@
       "webhookId": "d37f31f7-7cf4-403b-a0c2-b882c6376bc1",
       "credentials": {
         "telegramApi": {
-          "id": "xZj9U4VG4vJSiXqc",
+          "id": "YOUR_TELEGRAM_API_CREDENTIAL_ID",
           "name": "Openclaw Clone"
         }
       }
@@ -1660,7 +1660,7 @@
       "webhookId": "d7434e68-52b1-48ff-9c5d-0236438f9892",
       "credentials": {
         "telegramApi": {
-          "id": "xZj9U4VG4vJSiXqc",
+          "id": "YOUR_TELEGRAM_API_CREDENTIAL_ID",
           "name": "Openclaw Clone"
         }
       }
@@ -1687,7 +1687,7 @@
       "name": "Transcribe a recording",
       "credentials": {
         "googlePalmApi": {
-          "id": "uxYocLLhfBTVLA0r",
+          "id": "YOUR_GOOGLE_PALM_API_CREDENTIAL_ID",
           "name": "Your Google AI Account"
         }
       }
@@ -1715,7 +1715,7 @@
       "name": "Analyze an image",
       "credentials": {
         "googlePalmApi": {
-          "id": "uxYocLLhfBTVLA0r",
+          "id": "YOUR_GOOGLE_PALM_API_CREDENTIAL_ID",
           "name": "Your Google AI Account"
         }
       }
@@ -1935,7 +1935,7 @@
       "webhookId": "bbf8b2d1-921d-4a83-9e0c-efde5ea83bc0",
       "credentials": {
         "gmailOAuth2": {
-          "id": "ZwYN0qmskdA5inNo",
+          "id": "YOUR_GMAIL_O_AUTH2_CREDENTIAL_ID",
           "name": "n8nClaw"
         }
       }
@@ -1958,7 +1958,7 @@
       "webhookId": "b496028e-2a7d-4a09-a824-5c9aea779a0d",
       "credentials": {
         "gmailOAuth2": {
-          "id": "ZwYN0qmskdA5inNo",
+          "id": "YOUR_GMAIL_O_AUTH2_CREDENTIAL_ID",
           "name": "n8nClaw"
         }
       }
@@ -1985,7 +1985,7 @@
       "webhookId": "520fa693-54fa-468e-8f9b-f7ef8539b0fb",
       "credentials": {
         "gmailOAuth2": {
-          "id": "ZwYN0qmskdA5inNo",
+          "id": "YOUR_GMAIL_O_AUTH2_CREDENTIAL_ID",
           "name": "n8nClaw"
         }
       }
@@ -2008,7 +2008,7 @@
       "webhookId": "e58aedc1-67bf-4ff6-861c-a3072b28961c",
       "credentials": {
         "gmailOAuth2": {
-          "id": "ZwYN0qmskdA5inNo",
+          "id": "YOUR_GMAIL_O_AUTH2_CREDENTIAL_ID",
           "name": "n8nClaw"
         }
       }
@@ -2028,7 +2028,7 @@
       "name": "Create a document in Google Docs",
       "credentials": {
         "googleDocsOAuth2Api": {
-          "id": "SGAwuQ8dGvqJPzok",
+          "id": "YOUR_GOOGLE_DOCS_O_AUTH2_API_CREDENTIAL_ID",
           "name": "Your Google Docs Account"
         }
       }
@@ -2048,7 +2048,7 @@
       "name": "Get a document in Google Docs",
       "credentials": {
         "googleDocsOAuth2Api": {
-          "id": "SGAwuQ8dGvqJPzok",
+          "id": "YOUR_GOOGLE_DOCS_O_AUTH2_API_CREDENTIAL_ID",
           "name": "Your Google Docs Account"
         }
       }
@@ -2076,7 +2076,7 @@
       "name": "Update a document in Google Docs",
       "credentials": {
         "googleDocsOAuth2Api": {
-          "id": "SGAwuQ8dGvqJPzok",
+          "id": "YOUR_GOOGLE_DOCS_O_AUTH2_API_CREDENTIAL_ID",
           "name": "Your Google Docs Account"
         }
       }
@@ -2101,7 +2101,7 @@
       "name": "Delete a file in Google Drive",
       "credentials": {
         "googleDriveOAuth2Api": {
-          "id": "bZEY1tGIQmLuqXRA",
+          "id": "YOUR_GOOGLE_DRIVE_O_AUTH2_API_CREDENTIAL_ID",
           "name": "n8nClaw"
         }
       }
@@ -2133,7 +2133,7 @@
       "name": "Create folder in Google Drive",
       "credentials": {
         "googleDriveOAuth2Api": {
-          "id": "bZEY1tGIQmLuqXRA",
+          "id": "YOUR_GOOGLE_DRIVE_O_AUTH2_API_CREDENTIAL_ID",
           "name": "n8nClaw"
         }
       }
@@ -2167,7 +2167,7 @@
       "name": "Move file in Google Drive",
       "credentials": {
         "googleDriveOAuth2Api": {
-          "id": "bZEY1tGIQmLuqXRA",
+          "id": "YOUR_GOOGLE_DRIVE_O_AUTH2_API_CREDENTIAL_ID",
           "name": "n8nClaw"
         }
       }
@@ -2191,7 +2191,7 @@
       "name": "Search files and folders in Google Drive",
       "credentials": {
         "googleDriveOAuth2Api": {
-          "id": "bZEY1tGIQmLuqXRA",
+          "id": "YOUR_GOOGLE_DRIVE_O_AUTH2_API_CREDENTIAL_ID",
           "name": "n8nClaw"
         }
       }
@@ -2383,7 +2383,7 @@
       "webhookId": "e58aedc1-67bf-4ff6-861c-a3072b28961c",
       "credentials": {
         "gmailOAuth2": {
-          "id": "ZwYN0qmskdA5inNo",
+          "id": "YOUR_GMAIL_O_AUTH2_CREDENTIAL_ID",
           "name": "n8nClaw"
         }
       }
@@ -2438,7 +2438,7 @@
       "name": "Typing Indicator",
       "credentials": {
         "telegramApi": {
-          "id": "xZj9U4VG4vJSiXqc",
+          "id": "YOUR_TELEGRAM_API_CREDENTIAL_ID",
           "name": "Openclaw Clone"
         }
       },
@@ -2463,7 +2463,7 @@
       "name": "WhatsApp Typing Indicator",
       "credentials": {
         "evolutionApi": {
-          "id": "o6ck5oFhR5jtwIXm",
+          "id": "YOUR_EVOLUTION_API_CREDENTIAL_ID",
           "name": "Evolution account 2"
         }
       },
