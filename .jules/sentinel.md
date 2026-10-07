@@ -70,3 +70,7 @@
 **Vulnerability:** A number of credential IDs inside `n8nClaw.json` were left hardcoded as their internal n8n database IDs (e.g. "xZj9U4VG4vJSiXqc" for Telegram, "Sg8EmRUGkrhO8cp0" for Postgres, etc.) rather than being scrubbed. While these IDs are not raw API secrets, exposing internal database IDs in public workflow templates leaks infrastructure metadata and violates the principle of least privilege. Furthermore, n8n nodes expect dummy strings like "YOUR_OPENROUTER_API_CREDENTIAL_ID" when importing templates.
 **Learning:** When exporting and sanitizing n8n JSON workflows, all `id` values under the `credentials` object of every node must be replaced with clear placeholder strings (like `YOUR_*_CREDENTIAL_ID`). Display names (`name`) can remain as they only break UI references if removed.
 **Prevention:** Incorporate a credential scrubbing script into the export pipeline for n8n JSON templates to automatically sanitize all internal IDs before committing to version control.
+## 2024-05-24 - [Remove Hardcoded Credential ID]
+**Vulnerability:** A single node ("Answer Callback Query") had a hardcoded Telegram API credential ID (`xZj9U4VG4vJSiXqc`), while other nodes used placeholders.
+**Learning:** Even when a repository is mostly sanitized, a single overlooked node can expose credentials.
+**Prevention:** Always programmatically scan all credentials in JSON exports rather than relying on manual sanitization.

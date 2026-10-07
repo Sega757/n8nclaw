@@ -2485,7 +2485,7 @@
       "name": "Answer Callback Query",
       "credentials": {
         "telegramApi": {
-          "id": "xZj9U4VG4vJSiXqc",
+          "id": "YOUR_TELEGRAM_API_CREDENTIAL_ID",
           "name": "Openclaw Clone"
         }
       },
