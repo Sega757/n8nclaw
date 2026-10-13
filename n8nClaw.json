@@ -99,7 +99,8 @@
           "combinator": "and"
         },
         "looseTypeValidation": false,
-        "options": {}
+        "options": {},
+        "typeValidation": "strict"
       },
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2.3,
@@ -1009,7 +1010,8 @@
           "combinator": "and"
         },
         "looseTypeValidation": false,
-        "options": {}
+        "options": {},
+        "typeValidation": "strict"
       },
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2.3,
@@ -2411,7 +2413,8 @@
           "combinator": "and"
         },
         "looseTypeValidation": false,
-        "options": {}
+        "options": {},
+        "typeValidation": "strict"
       },
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2.3,
